@@ -1,0 +1,23 @@
+#include<stdio.h>
+long long int averybigsum(long long int a[10], int n)
+{
+    int i;
+    long long int sum=0;
+    for(i=0;i<n;i++)
+    {
+        sum=sum+ a[i];
+    }
+    return sum;
+}
+int main()
+{
+    int n,i;
+    scanf("%d",&n);
+    long long int a[10];
+    for(i=0;i<n;i++)
+    {
+        scanf("%lld ", &a[i]);
+    }
+    printf("%lld",averybigsum(a,n));
+    return 0;
+}
