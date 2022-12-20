@@ -1,0 +1,46 @@
+#include <assert.h>
+#include <ctype.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+long long int birthdayCakeCandles(long long int candles[], long int n)
+{
+    long int i,count=0;
+    long long int maxsum=0;
+    for(i=0;i<n;i++)
+    {
+        if(candles[i]>=maxsum)
+        {
+            maxsum=candles[i];
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        if(candles[i]==maxsum)
+        {
+            count++;
+        }
+    }
+    
+    return count;
+}
+int main()
+{
+    long int n,i;
+    long long int candles[100000],t;
+    scanf("%ld",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%lld ",&candles[i]);
+    }
+    t=birthdayCakeCandles(candles,n);
+    printf("%lld",t);
+    return 0;
+    
+}
